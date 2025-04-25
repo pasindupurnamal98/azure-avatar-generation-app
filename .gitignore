@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv/
+env/
+venv/
+
+# VSCode or IDE
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Secrets
+**/.env
+
+# Videos or media
+backend/videos/
