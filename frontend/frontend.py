@@ -69,3 +69,12 @@ if st.button("🎬 Generate Avatar Video"):
             else:
                 st.error("❌ Failed to generate avatar video.")
                 st.code(response.text)
+# --- Footer ---
+st.markdown(
+    "<hr style='margin-top: 3rem; margin-bottom: 1rem;'>"
+    "<div style='text-align: center; font-size: 0.9rem; color: gray;'>"
+    "© HOne Data and AI Team. All rights reserved. "
+    "</div>",
+    unsafe_allow_html=True
+)
+
