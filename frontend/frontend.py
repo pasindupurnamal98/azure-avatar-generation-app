@@ -6,10 +6,11 @@ st.set_page_config(page_title="Azure AI Avatar Generator", layout="centered")
 st.title("🎙️ Azure AI Avatar Video Generator")
 
 # --- Input Fields ---
-script_text = st.text_area("📝 Enter your script", height=150, value="Hello! I'm Ava from Azure.")
+script_text = st.text_area("📝 Enter your script", height=150, value="Hello! I'm Lisa from Azure.")
 
 voice = st.selectbox("🗣️ Select Voice", [
-    "en-US-AvaMultilingualNeural", "en-US-JennyNeural", "en-US-DavisNeural"
+    "en-US-AvaMultilingualNeural", "en-US-EmmaMultilingualNeural","en-US-ChristopherMultilingualNeural","en-US-JennyNeural", "en-US-AndrewMultilingualNeural",
+    "en-US-DavisNeural"
 ])
 
 avatar = st.selectbox("🧍 Select Avatar", [
@@ -17,9 +18,8 @@ avatar = st.selectbox("🧍 Select Avatar", [
 ])
 
 style = st.selectbox("🎭 Select Avatar Style", [
-    "business", "casual", "youthful", "formal", 
-    "casual-sitting", "graceful-sitting", "graceful-standing", 
-    "technical-sitting", "technical-standing"
+    "casual-sitting", "graceful", "business", "casual", "youthful", "formal", 
+    "graceful-standing","technical-sitting", "technical-standing"
 ])
 
 # --- Background Upload ---
