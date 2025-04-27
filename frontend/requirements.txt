@@ -1,4 +1,6 @@
 streamlit
+streamlit-authenticator
+PyYAML
 requests
 python-dotenv
 azure-storage-blob
