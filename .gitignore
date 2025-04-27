@@ -3,21 +3,45 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# Python virtual environments
 *.env
 *.venv/
 env/
 venv/
 
-# VSCode or IDE
+# VSCode or JetBrains IDEs
 .vscode/
 .idea/
 
-# OS Files
+# macOS system files
 .DS_Store
+
+# Windows system files
 Thumbs.db
 
-# Secrets
+# Environment variables / secrets
 **/.env
 
-# Videos or media
+# Uploaded media
 backend/videos/
+
+# Docker-related files
+docker-compose.override.yml
+docker-compose.debug.yml
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Ignore Docker volumes and images
+**/docker-volume/
+**/docker-images/
+
+# Node-related (if accidentally created in frontend/backend)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Streamlit Cache (for frontend)
+frontend/.streamlit/
+frontend/__pycache__/

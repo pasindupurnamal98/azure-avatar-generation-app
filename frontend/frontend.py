@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 
+
 st.set_page_config(page_title="Azure AI Avatar Generator", layout="centered")
 
 st.title("🎙️ Azure AI Avatar Video Generator")
@@ -59,6 +60,8 @@ if st.button("🎬 Generate Avatar Video"):
                 payload["backgroundImage"] = background_image_url
 
             response = requests.post("http://localhost:8000/generate-avatar", json=payload)
+            # response = requests.post("http://0.0.0.0:8000/generate-avatar", json=payload)
+            
 
             if response.status_code == 200:
                 data = response.json()
