@@ -11,8 +11,10 @@ st.title("🎙️ Azure AI Avatar Video Generator")
 
 # BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
-# Just the base URL, no path!
-BACKEND_URL = os.getenv("BACKEND_URL", "http://azure-avtr-backend:8000")
+# # Just the base URL, no path!
+# BACKEND_URL = os.getenv("BACKEND_URL", "http://azure-avtr-backend:8000")
+
+BACKEND_URL = os.getenv("BACKEND_URL", "https://hone-avtr-backend-h5b4h4eybqawe7g5.eastus2-01.azurewebsites.net")
 
 # --------------------------------------------------
 # ----------- 1.  AUTHENTICATION  ------------------
