@@ -1,6 +1,15 @@
 streamlit
-streamlit-authenticator
+# streamlit-authenticator
+streamlit-authenticator==0.2.3
 PyYAML
 requests
 python-dotenv
 azure-storage-blob
+
+# streamlit==1.33.0
+# streamlit-authenticator==0.2.3
+# PyYAML==6.0.1
+# requests==2.31.0
+# python-dotenv==1.0.1
+# azure-storage-blob==12.19.1
+
