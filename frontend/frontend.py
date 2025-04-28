@@ -9,7 +9,10 @@ import requests
 st.set_page_config(page_title="Azure AI Avatar Generator", layout="centered")
 st.title("🎙️ Azure AI Avatar Video Generator")
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+# BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+
+# Just the base URL, no path!
+BACKEND_URL = os.getenv("BACKEND_URL", "http://azure-avtr-backend:8000")
 
 # --------------------------------------------------
 # ----------- 1.  AUTHENTICATION  ------------------
@@ -121,10 +124,31 @@ if st.button("🎬 Generate Avatar Video"):
                 st.stop()
 
             data = r.json()
+            # video_url = f"{BACKEND_URL}{data['download_url']}"
+            # st.success("✅ Video ready!")
+            # st.video(video_url)
+            # st.markdown(f"[📥 Download Video]({video_url})", unsafe_allow_html=True)
             video_url = f"{BACKEND_URL}{data['download_url']}"
+
+            # Fetch the actual video bytes
+            try:
+                video_response = requests.get(video_url)
+                video_response.raise_for_status()
+            except requests.RequestException as e:
+                st.error(f"❌ Failed to fetch video: {e}")
+                st.stop()
+
+            video_bytes = video_response.content
+
             st.success("✅ Video ready!")
-            st.video(video_url)
-            st.markdown(f"[📥 Download Video]({video_url})", unsafe_allow_html=True)
+            st.video(video_bytes)  # <-- now real video bytes
+            st.download_button(
+                label="📥 Download Video",
+                data=video_bytes,
+                file_name="avatar_video.mp4",
+                mime="video/mp4"
+            )
+
 
 # --- Footer ---
 st.markdown(
